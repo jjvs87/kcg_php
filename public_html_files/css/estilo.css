@@ -1,0 +1,134 @@
+.caption{
+	height: 156px;
+}
+div#cabecera1 {
+    background: #34373E;
+}
+div#slider {
+    padding: 0;
+    margin-top: 0px;
+}
+div#footer {
+	background-color: #262626;
+	color: #fff;
+}
+.navbar-inverse {
+    background-color: #3E3F41;
+    border-color: #080808;
+}
+
+.cabecera {
+    height: 19px;
+    background: #F5F5F5;
+    border-top: 3px solid #49a7eb;
+}
+
+.navbar-nav li{
+	    border-right: 1px solid #e4e4e2;
+}
+.img-responsive{
+	width: 100%
+	height: auto;
+}
+div#cabecera {
+    height: 125px;
+    background: #34373E;
+}
+span.glyphicon.glyphicon-home {
+    color: #868686;
+}
+p#frase {
+    margin: 34px 0 0 222px;
+}
+
+ /****** ESTILO DE LA BARRA DE NAVEGACION ******/
+
+ nav.navbar.navegacion {
+    background-color: #3E3F41;
+    border-radius: 0;
+    display: block;
+    position: relative;
+}
+nav.navbar.navegacion li {
+    
+}
+ nav.navbar.navegacion li a {
+ 	font-size: 11px;
+ 	text-transform: uppercase;  
+    color: #fff;
+}
+/*----- HOVER ----*/
+
+nav.navbar.navegacion li a:hover {
+    color: #000;
+    border-bottom: 3px solid #49A7EB;
+   -webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+nav.navbar.navegacion li a.active {
+
+	color: black;
+    border-bottom: 3px solid #49A7EB;
+    border-radius: 2px 2px 1px 1px;
+    width: 100%;
+    margin-top: -1px;
+    background: #E0E0E0;
+    text-shadow: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    outline: none;
+    padding-top: 16px
+}
+
+/*************************************************/
+
+div#imagenes_index {
+    margin-bottom: 35px;
+    margin-top: 19px;
+}
+
+div#videos_index {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+img.img-responsive.imagenindex {
+    border-radius: 10px;
+}
+.thumbnail .caption {
+    padding: 9px;
+    color: #333;
+    height: auto;
+}
+
+/*********MARCAS*************/
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+
+/*.carousel {
+	margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+
+.carousel-indicators .active {
+background: #333333;
+}*/
+
+/********* FIN MARCAS*************/
