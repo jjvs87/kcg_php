@@ -24,7 +24,5 @@
 
       <?php llamar_productos_admin(); ?>
 
-
-
   </tbody>
 </table>

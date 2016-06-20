@@ -5,8 +5,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">SB Admin</a>
-                <a class="navbar-brand" href="../index.php">Ver Pagina</a>
+                <a class="navbar-brand" href="index.php">KCG Admin</a>
+                <a class="navbar-brand" href="../index.php" target="_blank">Ver Pagina</a>
 
             </div>
 

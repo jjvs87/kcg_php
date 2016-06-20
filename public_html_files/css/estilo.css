@@ -42,7 +42,10 @@ p#frase {
 }
 
  /****** ESTILO DE LA BARRA DE NAVEGACION ******/
-
+.navbar-nav {
+    float: left;
+    margin: 0 -10px;
+}
  nav.navbar.navegacion {
     background-color: #3E3F41;
     border-radius: 0;

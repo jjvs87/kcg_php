@@ -165,6 +165,40 @@ DELIMETER;
 		}
 	}
 
+	function llamar_productos_en_subcategorias(){
+
+		$query = query("SELECT * FROM productos WHERE subcat_id = " . escape_string($_GET['id']) . " AND producto_cantidad >=1");
+
+		confirm($query);
+
+		while($row = fetch_array($query)){
+
+		$producto_img = mostrar_imagen($row['producto_img']);
+
+		$producto = <<<DELIMETER
+		<div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <a href="item.php?id={$row['producto_id']}"><img src="../resources/{$producto_img}"></a>
+                    <div class="caption">
+                        <h3><a href="item.php?id={$row['producto_id']}">{$row['producto_titulo']}</a></h3>
+
+                        <p>{$row['desc_corta']}</p>
+                        <p>
+                            <a href="../resources/carrito.php?add={$row['producto_id']}" class="btn btn-primary">Comprar</a> <a href="item.php?id={$row['producto_id']}" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+DELIMETER;
+
+		echo $producto;
+
+
+
+		}
+	}
+
 	function llamar_productos_en_pagina_tienda(){
 
 		$query = query("SELECT * FROM productos WHERE producto_cantidad >=1");
@@ -301,7 +335,7 @@ echo $orders;
 			while($row = fetch_array($query)){
 
 			$categoria = mostrar_titulo_categoria_producto($row['producto_categoria_id']);
-			$subcategoria = mostrar_subcategoria_producto($row['producto_subcategoria_id']);
+			$subcategoria = mostrar_subcategoria_producto($row['subcat_id']);
 
 			$producto_img = mostrar_imagen($row['producto_img']);
 
@@ -359,7 +393,8 @@ DELIMETER;
 
 		$producto_titulo 		= escape_string($_POST['producto_titulo']);
 		$producto_categoria_id	= escape_string($_POST['producto_categoria_id']);
-		$subcat_id 						= escape_string($_POST['subcat_id']);
+		$subcat_id 				= escape_string($_POST['subcat_id']);
+		$marca_producto			= escape_string($_POST['marca_producto']);
 		$producto_precio 		= escape_string($_POST['producto_precio']);
 		$producto_descripcion 	= escape_string($_POST['producto_descripcion']);
 		$producto_cantidad	 	= escape_string($_POST['producto_cantidad']);
@@ -371,8 +406,8 @@ DELIMETER;
 		move_uploaded_file($imagen_temp_location , UPLOAD_DIRECTORY . DS . $producto_img);
 
 
-		$query = query("INSERT INTO productos (producto_titulo, producto_precio, producto_categoria_id, subcat_id, producto_descripcion, desc_corta, producto_cantidad, producto_img)
-						VALUES('{$producto_titulo}','{$producto_precio}', '{$producto_categoria_id}', '{$subcat_id}', '{$producto_descripcion}', '{$desc_corta}', '{$producto_cantidad}', '{$producto_img}') ");
+		$query = query("INSERT INTO productos (producto_titulo, producto_precio, producto_categoria_id, subcat_id, producto_descripcion, desc_corta, producto_cantidad, producto_img, marca_producto)
+						VALUES('{$producto_titulo}','{$producto_precio}', '{$producto_categoria_id}', '{$subcat_id}', '{$producto_descripcion}', '{$desc_corta}', '{$producto_cantidad}', '{$producto_img}', '{$marca_producto}') ");
 		$last_id = last_id();
 		confirm($query);
 		mensaje_alerta("Nuevo producto id {$last_id} fue agregado");
@@ -452,6 +487,7 @@ echo $marca_opciones;
 		$producto_titulo 		= escape_string($_POST['producto_titulo']);
 		$producto_categoria_id	= escape_string($_POST['producto_categoria_id']);
 		$subcat_id	= escape_string($_POST['subcat_id']);
+		$marca_producto			= escape_string($_POST['marca_producto']);
 		$producto_precio 		= escape_string($_POST['producto_precio']);
 		$producto_descripcion 	= escape_string($_POST['producto_descripcion']);
 		$producto_cantidad	 	= escape_string($_POST['producto_cantidad']);
@@ -479,6 +515,7 @@ echo $marca_opciones;
 		$query .= "producto_titulo 			= '{$producto_titulo}'			, ";
 		$query .= "producto_categoria_id 	= '{$producto_categoria_id}'	, ";
 		$query .= "subcat_id 	= '{$subcat_id}'	, ";
+		$query .= "marca_producto 	= '{$marca_producto}'	, ";
 		$query .= "producto_precio 			= '{$producto_precio}'			, ";
 		$query .= "producto_descripcion 	= '{$producto_descripcion}'		, ";
 		$query .= "producto_cantidad 		= '{$producto_cantidad}'		, ";
@@ -921,11 +958,18 @@ DELIMETER;
 	}
 // ************ FUNCION DE AGREGAR VIDEO EN INICIO *********
 
+	function agregar_video(){
 
+	if(isset($_POST['add_video'])){
 
+	$link = escape_string($_POST['link']);
 
-
-
+	$query = query("INSERT INTO video_youtube (link) VALUES ('{link}')");
+	confirm($query);
+			mensaje_alerta("Slides agregado");
+			redirect("index.php?slides");
+}
+}
 
 // ************ FUNCION DE AGREGAR VIDEO EN INICIO *********
  ?> <!-- FIN PHP -->

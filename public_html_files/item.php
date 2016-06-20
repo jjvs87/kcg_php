@@ -6,19 +6,12 @@
 <div class="container">
 
        <!-- Side Navigation -->
-
-           <?php include(TEMPLATE_FRONT . DS . "side_nav.php"); ?>
-
-            <?php
-            $query = query("SELECT * FROM productos WHERE producto_id = " . escape_string($_GET['id']) . " ");
-    
-
-        confirm($query);
-
-        while($row = fetch_array($query)){
-         
-        
-        ?>
+    <?php include(TEMPLATE_FRONT . DS . "side_nav.php"); ?>
+    <?php
+    $query = query("SELECT * FROM productos WHERE producto_id = " . escape_string($_GET['id']) . " ");
+    confirm($query);
+    while($row = fetch_array($query)){
+    ?>
 
 <div class="col-md-9">
 

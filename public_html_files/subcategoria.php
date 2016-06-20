@@ -5,20 +5,20 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Jumbotron Header -->
-        <header>
-            <h1></h1>
-        </header>
+       
 
-        <hr>
-
-   
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Productos</h3>
+            </div>
+        </div>
         <!-- /.row -->
 
         <!-- Page Features -->
         <div class="row text-center">
 
-            <?php llamar_productos_en_pagina_tienda(); ?>
+            <?php llamar_productos_en_subcategorias() ?>
             
 
         </div>

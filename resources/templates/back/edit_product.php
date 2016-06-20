@@ -11,6 +11,7 @@ if(isset($_GET['id'])){
     $producto_titulo        = escape_string($row['producto_titulo']);
     $producto_categoria_id  = escape_string($row['producto_categoria_id']);
     $subcat_id 						  = escape_string($row['subcat_id']);
+    $marca_producto              = escape_string($row['marca_producto']);
     $producto_precio        = escape_string($row['producto_precio']);
     $producto_descripcion   = escape_string($row['producto_descripcion']);
     $producto_cantidad      = escape_string($row['producto_cantidad']);
@@ -63,10 +64,6 @@ if(isset($_GET['id'])){
 
 
 
-
-
-
-
 </div><!--Main Content-->
 
 
@@ -94,11 +91,20 @@ if(isset($_GET['id'])){
 
       <div class="form-group">
            <label for="product-title">Subcategoria de producto</label>
-          <select name="producto_categoria_id" id="" class="form-control">
+          <select name="subcat_id" id="" class="form-control">
               <option value="<?php echo $subcat_id; ?>"><?php echo mostrar_subcategoria_producto($subcat_id)?></option>
              <?php mostrar_subcategorias_agregar_producto(); ?>
           </select>
-        </div><
+        </div>
+
+
+         <div class="form-group">
+           <label for="marca-title">Fabricante/Marca</label>
+          <select name="marca_producto" id="" class="form-control">
+              <option value="<?php echo $marca_producto; ?>"><?php echo mostrar_marca_producto($marca_producto)?></option>
+             <?php mostrar_marca_producto(); ?>
+          </select>
+        </div>
 
 
 <div class="form-group ">

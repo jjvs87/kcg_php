@@ -23,12 +23,12 @@
 
 
     <div class="form-group">
-           <label for="product-title">Descripcion corta</label>
+           <label for="product-title">Descripción corta</label>
       <textarea  name="desc_corta"  cols="30" rows="3" class="form-control mytextarea"></textarea>
     </div>
 
     <div class="form-group">
-           <label for="product-title">Descripcion del producto</label>
+           <label for="product-title">Descripción del producto</label>
       <textarea name="producto_descripcion"  cols="30" rows="10" class="form-control mytextarea" ></textarea>
     </div>
 
@@ -70,7 +70,7 @@
 <div class="form-group">
      <label for="product-title">Subcategoria de producto</label>
 
-    <select name="producto_subcategoria_id" id="" class="form-control">
+    <select name="subcat_id" id="" class="form-control">
         <option value="">Selecciona Subcategoria</option>
        <?php mostrar_subcategorias_agregar_producto(); ?>
     </select>
@@ -79,7 +79,7 @@
 <div class="form-group">
      <label for="product-title">Fabricante</label>
 
-    <select name="producto_subcategoria_id" id="" class="form-control">
+    <select name="marca_producto" id="" class="form-control">
         <option value="">Selecciona Fabricante</option>
        <?php mostrar_marca_producto(); ?>
     </select>
@@ -111,10 +111,6 @@
 
     </div>
 
-
-
 </aside><!--SIDEBAR-->
-
-
 
 </form>

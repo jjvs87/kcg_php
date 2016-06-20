@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Administrador <small>The Outfit</small>
+                            Administrador <small><img src="img/logo-kristal.png"></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
